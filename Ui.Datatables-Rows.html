@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Asho.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="font/iconsmind-s/css/iconsminds.css" />
+    <link rel="stylesheet" href="font/simple-line-icons/css/simple-line-icons.css" />
+    <link rel="stylesheet" href="css/vendor/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="css/vendor/datatables.responsive.bootstrap4.min.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap-float-label.min.css" />
+
+    <link rel="stylesheet" href="css/vendor/bootstrap.rtl.only.min.css" />
+    <link rel="stylesheet" href="css/vendor/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="css/vendor/component-custom-switch.min.css" />
+    <link rel="stylesheet" href="css/vendor/select2.min.css" />
+    <link rel="stylesheet" href="css/vendor/select2-bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+<!-- body begins -->
+<body id="app-container" class="menu-default show-spinner">
+    <nav class="navbar fixed-top">
+        <div class="d-flex align-items-center navbar-left">
+            <a href="#" class="menu-button d-none d-md-block">
+                <svg class="main" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 17">
+                    <rect x="0.48" y="0.5" width="7" height="1" />
+                    <rect x="0.48" y="7.5" width="7" height="1" />
+                    <rect x="0.48" y="15.5" width="7" height="1" />
+                </svg>
+                <svg class="sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 17">
+                    <rect x="1.56" y="0.5" width="16" height="1" />
+                    <rect x="1.56" y="7.5" width="16" height="1" />
+                    <rect x="1.56" y="15.5" width="16" height="1" />
+                </svg>
+            </a>
+
+            <a href="#" class="menu-button-mobile d-xs-block d-sm-block d-md-none">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 17">
+                    <rect x="0.5" y="0.5" width="25" height="1" />
+                    <rect x="0.5" y="7.5" width="25" height="1" />
+                    <rect x="0.5" y="15.5" width="25" height="1" />
+                </svg>
+            </a>
+        </div>
+
+        <a class="navbar-logo" href="dashboard.html">
+            <img class="logo d-none d-xs-block" src="logos/logo_1.png" alt="">
+            <img class="logo-mobile d-block d-xs-none" src="logos/logo_1.png" alt="">
+        </a>
+
+        <div class="navbar-right">
+            <div class="header-icons d-inline-block align-middle">
+                <div class="d-none d-md-inline-block align-text-bottom mr-3">
+                    <div class="custom-switch custom-switch-primary-inverse custom-switch-small pl-1"
+                        data-toggle="tooltip" data-placement="left" title="Dark Mode">
+                        <input class="custom-switch-input" id="switchDark" type="checkbox" checked>
+                        <label class="custom-switch-btn" for="switchDark"></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="user d-inline-block">
+                <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <span class="name">Asho.</span>
+                    <span>
+                        <img alt="Profile Picture" src="img/profiles/2-1.png" />
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+<!-- body ends -->
+
+<!-- main begins -->
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Total Users</h1>
+                    <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
+                        <ol class="breadcrumb pt-0">
+                            <li class="breadcrumb-item">
+                                <a href="#">Home</a>
+                            </li>
+                        </ol>
+                    </nav>
+
+                    <div class="mb-2">
+                        <a class="btn pt-0 pl-0 d-inline-block d-md-none" data-toggle="collapse" href="#displayOptions"
+                            role="button" aria-expanded="true" aria-controls="displayOptions">
+                            Display Options
+                            <i class="simple-icon-arrow-down align-middle"></i>
+                        </a>
+                        <div class="collapse dont-collapse-sm" id="displayOptions">
+                            <div class="d-block d-md-inline-block">
+                                <div class="search-sm d-inline-block float-md-left mr-1 mb-1 align-top">
+                                    <input class="form-control" placeholder="Search Table" id="searchDatatable">
+                                </div>
+                            </div>
+                            <div class="float-md-right dropdown-as-select" id="pageCountDatatable">
+                                <span class="text-muted text-small">Displaying 1-10 of 40 items </span>
+                                <button class="btn btn-outline-dark btn-xs dropdown-toggle" type="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    10
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#">5</a>
+                                    <a class="dropdown-item active" href="#">10</a>
+                                    <a class="dropdown-item" href="#">20</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="separator"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 mb-4 data-table-rows data-tables-hide-filter">
+                    <table id="datatableRows" class="data-table responsive nowrap"
+                        data-order="[[ 1, &quot;desc&quot; ]]">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Items Purchased</th>
+                                <th>Total Cost Of Items</th>
+                                <th class="empty">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Miss Cake</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Misscake01@gmail.com</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">20</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">$450.00</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Dare</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Misscake01@gmail.com</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">85</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">$450.00</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Mantecada</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Misscake01@gmail.com</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">21</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">$450.00</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading"> Jack Batik</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Misscake01@gmail.com</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">114</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">$200.00</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Kransekake</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Misscake01@gmail.com</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">27</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">$150.00</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Aranygaluska</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">1323</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">57</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Desserts</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Lamington</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Misscake01@gmail.com</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">11</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">$70.00</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Kremówka</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Misscake01@gmail.com</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">94</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">$300.00</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Kladdkaka</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Misscake01@gmail.com</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">37</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">$120.00</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">David cake</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Misscake01@gmail.com</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">65</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">$90.00</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Blondie</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">1218</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">19</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Cupcakes</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Chocolate Cake</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">1200</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">45</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Desserts</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Banoffee Pie</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">1192</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">22</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Cakes</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Croquembouche</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">1176</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">48</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Desserts</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Basbousa</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">1154</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">13</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Desserts</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Bebinca</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">1150</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">4</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Cupcakes</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Punschkrapfen</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">1108</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">87</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Cupcakes</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Crystal Cake</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">1068</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">43</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Cupcakes</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Napoleonshat</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Misscake01@gmail.com</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">41</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">$41.00</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Bibingka</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">kake01@gmail.com</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">12</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">$87.00</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Magdalena</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">998</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">24</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Cupcakes</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Butterkuchen</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">981</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">17</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Cakes</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Charlotte</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">976</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">26</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Desserts</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Avocado Cake</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">961</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">106</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Cakes</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Fig Cake</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">948</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">37</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Cakes</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Šakotis</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">931</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">54</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Cakes</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Chenna Poda</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">930</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">7</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Desserts</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Salzburger Nockerl</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">924</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">20</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Desserts</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Pavlova</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">918</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">14</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Cupcakes</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Soufflé</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">905</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">64</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Cupcakes</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Cremeschnitte</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">845</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">12</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Desserts</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Kolaczki</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">838</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">21</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Cupcakes</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Cheesecake</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">830</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">36</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Desserts</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Gingerbread</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">807</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">21</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Cupcakes</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Goose Breast</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">795</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">9</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Cupcakes</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Baumkuchen</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">792</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">18</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Desserts</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Faworki</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">783</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">38</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Desserts</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Kabuni</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">749</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">148</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Cupcakes</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Buccellato</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">738</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">51</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Desserts</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="list-item-heading">Vínarterta</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">711</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">49</p>
+                                </td>
+                                <td>
+                                    <p class="text-muted">Desserts</p>
+                                </td>
+                                <td>
+                                    <label
+                                        class="custom-control custom-checkbox mb-1 align-self-center data-table-rows-check">
+                                        <input type="checkbox" class="custom-control-input">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- main ends -->
+
+    <!-- footer begins -->
+    <footer class="page-footer">
+        <div class="footer-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <p class="mb-0 text-muted">Asho 2022</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer ends -->
+
+    <script src="js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="js/vendor/perfect-scrollbar.min.js"></script>
+    <script src="js/vendor/jquery.validate/jquery.validate.min.js"></script>
+    <script src="js/vendor/jquery.validate/additional-methods.min.js"></script>
+    <script src="js/vendor/datatables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
+    <script src="js/vendor/select2.full.js"></script>
+    <script src="js/dore.script.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>

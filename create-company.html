@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="font/iconsmind-s/css/iconsminds.css" />
+    <link rel="stylesheet" href="font/simple-line-icons/css/simple-line-icons.css" />
+
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap.rtl.only.min.css" />
+    <link rel="stylesheet" href="css/vendor/fullcalendar.min.css" />
+    <link rel="stylesheet" href="css/vendor/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="css/vendor/datatables.responsive.bootstrap4.min.css" />
+    <link rel="stylesheet" href="css/vendor/select2.min.css" />
+    <link rel="stylesheet" href="css/vendor/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="css/vendor/glide.core.min.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap-stars.css" />
+    <link rel="stylesheet" href="css/vendor/nouislider.min.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="css/vendor/component-custom-switch.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body id="app-container" class="menu-default show-spinner">
+    <nav class="navbar fixed-top">
+        <div class="d-flex align-items-center navbar-left">
+            <a href="#" class="menu-button d-none d-md-block">
+                <svg class="main" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 17">
+                    <rect x="0.48" y="0.5" width="7" height="1" />
+                    <rect x="0.48" y="7.5" width="7" height="1" />
+                    <rect x="0.48" y="15.5" width="7" height="1" />
+                </svg>
+                <svg class="sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 17">
+                    <rect x="1.56" y="0.5" width="16" height="1" />
+                    <rect x="1.56" y="7.5" width="16" height="1" />
+                    <rect x="1.56" y="15.5" width="16" height="1" />
+                </svg>
+            </a>
+
+            <a href="#" class="menu-button-mobile d-xs-block d-sm-block d-md-none">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 17">
+                    <rect x="0.5" y="0.5" width="25" height="1" />
+                    <rect x="0.5" y="7.5" width="25" height="1" />
+                    <rect x="0.5" y="15.5" width="25" height="1" />
+                </svg>
+            </a>
+        </div>
+
+
+        <a class="navbar-logo" href="dashboard.html">
+            <span class="logo d-none d-xs-block"></span>
+            <span class="logo-mobile d-block d-xs-none"></span>
+        </a>
+
+        <div class="navbar-right">
+            <div class="header-icons d-inline-block align-middle">
+                <button class="header-icon btn btn-empty d-none d-sm-inline-block" type="button" id="fullScreenButton">
+                    <i class="simple-icon-size-fullscreen"></i>
+                    <i class="simple-icon-size-actual"></i>
+                </button>
+            </div>
+
+            <div class="user d-inline-block">
+                <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <span class="name">Sarah Kortney</span>
+                    <span>
+                        <img alt="Profile Picture" src="img/profiles/l-1.jpg" />
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="menu">
+        <div class="main-menu">
+            <div class="scroll">
+                <ul class="list-unstyled">
+                    <li class="active">
+                        <a href="dashboard.html">
+                            <i class="iconsminds-shop-4"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="users.html">
+                            <i class="iconsminds-digital-drawing"></i> Users
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sellers.html">
+                            <i class="iconsminds-air-balloon-1"></i> Sellers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="products.html">
+                            <i class="iconsminds-pantone"></i> Products
+                        </a>
+                    </li>
+                    <li>
+                        <a href="orders.html">
+                            <i class="iconsminds-three-arrow-fork"></i> Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="deliveries.html">
+                            <i class="iconsminds-bucket"></i> Deliveries
+                        </a>
+                    </li>
+                    <li>
+                        <a href="payments.html">
+                            <i class="iconsminds-bucket"></i> Payments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="categories.html">
+                            <i class="iconsminds-bucket"></i> Categories
+                        </a>
+                    </li>
+                    <li>
+                        <a href="create-company.html">
+                            <i class="iconsminds-bucket"></i> Create Company
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Blank Page</h1>
+                    <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
+                        <ol class="breadcrumb pt-0">
+                            <li class="breadcrumb-item">
+                                <a href="#">Home</a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#">Library</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Data</li>
+                        </ol>
+                    </nav>
+                    <div class="separator mb-5"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <div class="footer-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <p class="mb-0 text-muted">ColoredStrategies 2019</p>
+                    </div>
+                    <div class="col-sm-6 d-none d-sm-block">
+                        <ul class="breadcrumb pt-0 pr-0 float-right">
+                            <li class="breadcrumb-item mb-0">
+                                <a href="#" class="btn-link">Review</a>
+                            </li>
+                            <li class="breadcrumb-item mb-0">
+                                <a href="#" class="btn-link">Purchase</a>
+                            </li>
+                            <li class="breadcrumb-item mb-0">
+                                <a href="#" class="btn-link">Docs</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="js/vendor/perfect-scrollbar.min.js"></script>
+    <script src="js/vendor/mousetrap.min.js"></script>
+    <script src="js/dore.script.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

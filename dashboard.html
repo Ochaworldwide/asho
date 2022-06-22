@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="font/iconsmind-s/css/iconsminds.css" />
+    <link rel="stylesheet" href="font/simple-line-icons/css/simple-line-icons.css" />
+
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap.rtl.only.min.css" />
+    <link rel="stylesheet" href="css/vendor/fullcalendar.min.css" />
+    <link rel="stylesheet" href="css/vendor/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="css/vendor/datatables.responsive.bootstrap4.min.css" />
+    <link rel="stylesheet" href="css/vendor/select2.min.css" />
+    <link rel="stylesheet" href="css/vendor/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="css/vendor/glide.core.min.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap-stars.css" />
+    <link rel="stylesheet" href="css/vendor/nouislider.min.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="css/vendor/component-custom-switch.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body id="app-container" class="menu-default show-spinner">
+    <nav class="navbar fixed-top">
+        <div class="d-flex align-items-center navbar-left">
+            <a href="#" class="menu-button d-none d-md-block">
+                <svg class="main" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 17">
+                    <rect x="0.48" y="0.5" width="7" height="1" />
+                    <rect x="0.48" y="7.5" width="7" height="1" />
+                    <rect x="0.48" y="15.5" width="7" height="1" />
+                </svg>
+                <svg class="sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 17">
+                    <rect x="1.56" y="0.5" width="16" height="1" />
+                    <rect x="1.56" y="7.5" width="16" height="1" />
+                    <rect x="1.56" y="15.5" width="16" height="1" />
+                </svg>
+            </a>
+
+            <a href="#" class="menu-button-mobile d-xs-block d-sm-block d-md-none">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 17">
+                    <rect x="0.5" y="0.5" width="25" height="1" />
+                    <rect x="0.5" y="7.5" width="25" height="1" />
+                    <rect x="0.5" y="15.5" width="25" height="1" />
+                </svg>
+            </a>
+        </div>
+
+
+        <a class="navbar-logo" href="dashboard.html">
+            <img class="logo d-none d-xs-block" src="logos/logo_1.png" alt="">
+            <img class="logo-mobile d-block d-xs-none" src="logos/logo_1.png" alt="">
+        </a>
+    
+        <div class="navbar-right">
+            <div class="header-icons d-inline-block align-middle">
+                <div class="d-none d-md-inline-block align-text-bottom mr-3">
+                    <div class="custom-switch custom-switch-primary-inverse custom-switch-small pl-1"
+                        data-toggle="tooltip" data-placement="left" title="Dark Mode">
+                        <input class="custom-switch-input" id="switchDark" type="checkbox" checked>
+                        <label class="custom-switch-btn" for="switchDark"></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="user d-inline-block">
+                <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <span class="name"> Asho.</span>
+                    <span>
+                        <img alt="Profile Picture" src="img/profiles/2-1.png" />
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="menu">
+        <div class="main-menu">
+            <div class="scroll">
+                <ul class="list-unstyled">
+                    <li class="active">
+                        <a href="dashboard.html">
+                            <i class="iconsminds-id-card"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Ui.Datatables-Rows.html">
+                            <i class="iconsminds-user"></i> Users
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Ui.Datatables.Default.html">
+                            <i class="iconsminds-male-female"></i> Sellers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Pr.datatables-deafult.html">
+                            <i class="iconsminds-t-shirt"></i> Products
+                        </a>
+                    </li>
+                    <li>
+                        <a href="datatables-deafult.html">
+                            <i class="iconsminds-cart-quantity"></i> Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="De.datatables-deafult.html">
+                            <i class="iconsminds-jeep"></i> Deliveries
+                        </a>
+                    </li>
+                    <li>
+                        <a href="payments.html">
+                            <i class="iconsminds-coins"></i> Payments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="categories.html">
+                            <i class="simple-icon-grid"></i> Categories
+                        </a>
+                    </li>
+                    <li>
+                        <a href="categories.html">
+                            <i class="iconsminds-folder-add--"></i> Create Products
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Register-company.html">
+                            <i class="iconsminds-home"></i> Create Company
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- main begins -->
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Welcome!</h1>
+                    <div class="separator mb-5"></div>
+                </div>
+                <div class="col-lg-12 col-xl-6">
+                    <div class="icon-cards-row">
+                        <div class="glide dashboard-numbers">
+                            <div class="glide__track" data-glide-el="track">
+                                <ul class="glide__slides">
+                                    <li>
+                                        <a href="Pages.Product-Thumbs.html" class="card">
+                                            <div class="card-body text-center">
+                                                <i class="iconsminds-clock"></i>
+                                                <p class="card-text mb-0">Pending Orders</p>
+                                                <p class="lead text-center">10</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Pages.ProductThumbs.html. Copy.html" class="card">
+                                            <div class="card-body text-center">
+                                                <i class="iconsminds-basket-coins"></i>
+                                                <p class="card-text mb-0">Completed Orders</p>
+                                                <p class="lead text-center">92</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Ui.Datatables-Rows.html" class="card">
+                                            <div class="card-body text-center">
+                                                <i class="iconsminds-business-mens"></i>
+                                                <p class="card-text mb-0">Total Users</p>
+                                                <p class="lead text-center">2,000,000</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Ui.Datatables.Default.html" class="card">
+                                            <div class="card-body text-center">
+                                                <i class="iconsminds-mens"></i>
+                                                <p class="card-text mb-0">Total Vendors</p>
+                                                <p class="lead text-center">5,000,000</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 mb-4">
+                            <div class="card">
+                                <div class="position-absolute card-top-buttons">
+
+                                    <button class="btn btn-header-light icon-button" type="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="simple-icon-refresh"></i>
+                                    </button>
+
+                                    <div class="dropdown-menu dropdown-menu-right mt-3">
+                                        <a class="dropdown-item" href="#">Sales</a>
+                                        <a class="dropdown-item" href="#">Orders</a>
+                                        <a class="dropdown-item" href="#">Refunds</a>
+                                    </div>
+
+                                </div>
+
+                                <div class="card-body">
+                                    <h4 class="card-title">Sales</h4>
+                                    <div class="dashboard-line-chart chart">
+                                        <canvas id="salesChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-6 col-lg-12 mb-4">
+                    <div class="card">
+                        <div class="position-absolute card-top-buttons">
+                            <button class="btn btn-header-light icon-button">
+                                <i class="simple-icon-refresh"></i>
+                            </button>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">Recent Orders</h5>
+                            <div class="scroll dashboard-list-with-thumbs">
+                                <div class="d-flex flex-row mb-3">
+                                    <a class="d-block position-relative" href="Pages.Product-Detail.html">
+                                        <img src="img/products/004.jpeg" alt="Aso-oke"
+                                            class="list-thumbnail border-0" />
+                                        <span
+                                            class="badge badge-pill badge-theme-2 position-absolute badge-top-right">NEW</span>
+                                    </a>
+                                    <div class="pl-3 pt-2 pr-2 pb-2">
+                                        <a href="#">
+                                            <p class="list-item-heading">Ankara</p>
+                                            <div class="pr-4 d-none d-sm-block">
+                                                <p class="text-muted mb-1 text-small">Eko Idumota, Lagos Island, Lagos - Nigeria</p>
+                                            </div>
+                                            <div class="text-primary text-small font-weight-medium d-none d-sm-block">
+                                                16.12.2021</div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-row mb-3">
+                                    <a class="d-block position-relative" href="Pages.Product-Detail.html">
+                                        <img src="img/products/003.jpeg" alt="Ankara"
+                                            class="list-thumbnail border-0" />
+                                        <span
+                                            class="badge badge-pill badge-theme-2 position-absolute badge-top-right">NEW</span>
+                                    </a>
+                                    <div class="pl-3 pt-2 pr-2 pb-2">
+                                        <a href="#">
+                                            <p class="list-item-heading">Aso Oke</p>
+                                            <div class="pr-4 d-none d-sm-block">
+                                                <p class="text-muted mb-1 text-small">Eko Idumota, Lagos Island, Lagos - Nigeria</p>
+                                            </div>
+                                            <div class="text-primary text-small font-weight-medium d-none d-sm-block">
+                                                16.12.2021</div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-row mb-3">
+                                    <a class="d-block position-relative" href="Pages.Product-Detail.html">
+                                        <img src="img/products/003.jpeg" alt="Adire"
+                                            class="list-thumbnail border-0" />
+                                        <span
+                                            class="badge badge-pill badge-theme-1 position-absolute badge-top-right">PROCESS</span>
+                                    </a>
+                                    <div class="pl-3 pt-2 pr-2 pb-2">
+                                        <a href="#">
+                                            <p class="list-item-heading">Adire</p>
+                                            <div class="pr-4 d-none d-sm-block">
+                                                <p class="text-muted mb-1 text-small">Eko Idumota, Lagos Island, Lagos - Nigeria</p>
+                                            </div>
+                                            <div class="text-primary text-small font-weight-medium d-none d-sm-block">
+                                                16.12.2021</div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-row mb-3">
+                                    <a class="d-block position-relative" href="Pages.Product-Detail.html">
+                                        <img src="img/products/002.jpg" alt="Aso-ebi"
+                                            class="list-thumbnail border-0" />
+                                        <span
+                                            class="badge badge-pill badge-theme-3 position-absolute badge-top-right">DONE</span>
+                                    </a>
+                                    <div class="pl-3 pt-2 pr-2 pb-2">
+                                        <a href="#">
+                                            <p class="list-item-heading">Kente</p>
+                                            <div class="pr-4 d-none d-sm-block">
+                                                <p class="text-muted mb-1 text-small">Eko Idumota, Lagos Island, Lagos - Nigeria</p>
+                                            </div>
+                                            <div class="text-primary text-small font-weight-medium d-none d-sm-block">
+                                                16.12.2021</div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-row mb-3">
+                                    <a class="d-block position-relative" href="Pages.Product-Detail.html">
+                                        <img src="img/products/004.jpeg" alt="Ankara"
+                                            class="list-thumbnail border-0" />
+                                        <span
+                                            class="badge badge-pill badge-theme-3 position-absolute badge-top-right">DONE</span>
+                                    </a>
+                                    <div class="pl-3 pt-2 pr-2 pb-2">
+                                        <a href="#">
+                                            <p class="list-item-heading">Lace</p>
+                                            <div class="pr-4 d-none d-sm-block">
+                                                <p class="text-muted mb-1 text-small">Eko Idumota, Lagos Island, Lagos - Nigeria</p>
+                                            </div>
+                                            <div class="text-primary text-small font-weight-medium d-none d-sm-block">
+                                                16.12.2021</div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-row mb-3">
+                                    <a class="d-block position-relative" href="Pages.Product-Detail.html">
+                                        <img src="img/products/001.jpg" alt="Aso-ebi"
+                                            class="list-thumbnail border-0" />
+                                        <span
+                                            class="badge badge-pill badge-theme-3 position-absolute badge-top-right">DONE</span>
+                                    </a>
+                                    <div class="pl-3 pt-2 pr-2 pb-2">
+                                        <a href="#">
+                                            <p class="list-item-heading">Kente</p>
+                                            <div class="pr-4 d-none d-sm-block">
+                                                <p class="text-muted mb-1 text-small">Lenna Majeed - 6 Hertford St
+                                                    Mayfair, London, UK</p>
+                                            </div>
+                                            <div class="text-primary text-small font-weight-medium d-none d-sm-block">
+                                                09.04.2018</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Best Sellers</h5>
+                            <table class="data-table data-table-standard responsive nowrap"
+                                data-order="[[ 1, &quot;desc&quot; ]]">
+                                <thead>
+                                    <tr>
+                                        <th>Storefront Name</th>
+                                        <th>Fulfilled Orders</th>
+                                        <th>Amount Sold</th>
+                                        <th>Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p class="list-item-heading">Miskay</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">1452</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">62</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">Cupcakes</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="list-item-heading">Benaya</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">1245</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">65</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">Desserts</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="list-item-heading">Zorah</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">1200</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">45</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">Desserts</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="list-item-heading">Miskay</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">1150</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">4</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">Cupcakes</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="list-item-heading">Benaya</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">1050</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">41</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">Cakes</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="list-item-heading">Zorah</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">998</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">24</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">Cakes</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="list-item-heading">Mirize</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">924</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">20</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">Desserts</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="list-item-heading">Soufflé store</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">905</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">64</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">Cupcakes</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="list-item-heading">Cremeschnitte</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">845</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">12</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">Desserts</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="list-item-heading">Cheesecake</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">830</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">36</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">Desserts</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="list-item-heading">Gingerbread</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">807</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">21</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">Cupcakes</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="list-item-heading">Goose Breast</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">795</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">9</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-muted">Cupcakes</p>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-sm-12 mb-4">
+                    <div class="card dashboard-filled-line-chart">
+                        <div class="card-body ">
+                            <div class="float-left float-none-xs">
+                                <div class="d-inline-block">
+                                    <h5 class="d-inline">Website Visits</h5>
+                                    <span class="text-muted text-small d-block">Unique Visitors</span>
+                                </div>
+                            </div>
+                            <div class="btn-group float-right float-none-xs mt-2">
+                                <button class="btn btn-outline-primary btn-xs dropdown-toggle" type="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    This Week
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Last Week</a>
+                                    <a class="dropdown-item" href="#">This Month</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart card-body pt-0">
+                            <canvas id="visitChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 mb-4">
+                    <div class="card dashboard-filled-line-chart">
+                        <div class="card-body ">
+                            <div class="float-left float-none-xs">
+                                <div class="d-inline-block">
+                                    <h5 class="d-inline">Conversion Rates</h5>
+                                    <span class="text-muted text-small d-block">Per Session</span>
+                                </div>
+                            </div>
+                            <div class="btn-group float-right mt-2 float-none-xs">
+                                <button class="btn btn-outline-secondary btn-xs dropdown-toggle" type="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    This Week
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Last Week</a>
+                                    <a class="dropdown-item" href="#">This Month</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart card-body pt-0">
+                            <canvas id="conversionChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+               
+                <div class="col-xl-6 col-lg-6 mb-4">
+                    <div class="row">
+                        <div class="col-6 mb-4">
+                            <div class="card dashboard-small-chart">
+                                <div class="card-body">
+                                    <p class="lead color-theme-1 mb-1 value"></p>
+                                    <p class="mb-0 label text-small"></p>
+                                    <div class="chart">
+                                        <canvas id="smallChart1"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card dashboard-small-chart">
+                                <div class="card-body">
+                                    <p class="lead color-theme-1 mb-1 value"></p>
+                                    <p class="mb-0 label text-small"></p>
+                                    <div class="chart">
+                                        <canvas id="smallChart2"></canvas>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card dashboard-small-chart">
+                                <div class="card-body">
+                                    <p class="lead color-theme-1 mb-1 value"></p>
+                                    <p class="mb-0 label text-small"></p>
+                                    <div class="chart">
+                                        <canvas id="smallChart3"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card dashboard-small-chart">
+                                <div class="card-body">
+                                    <p class="lead color-theme-1 mb-1 value"></p>
+                                    <p class="mb-0 label text-small"></p>
+                                    <div class="chart">
+                                        <canvas id="smallChart4"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card dashboard-top-rated">
+                        <div class="card-body">
+                            <h5 class="card-title">Top Sold Items</h5>
+
+                            <div class="glide best-rated-items">
+                                <div class="glide__track" data-glide-el="track">
+                                    <div class="glide__slides">
+                                        <div class="glide__slide">
+                                            <img src="img/products/001.jpg" alt="Cheesecake" class="mb-4">
+                                            <h6 class="mb-1"><span class="mr-2"></span>Ankara  (46)</h6>
+                                        </div>
+                                        <div class="glide__slide">
+                                            <img src="img/products/003.jpeg" alt="Chocolate Cake" class="mb-4">
+                                            <h6 class="mb-1"><span class="mr-2"></span>Aso-oke  (60)</h6>                           
+                                        </div>
+                                        <div class="glide__slide">
+                                            <img src="img/products/004.jpeg" alt="Cremeschnitte" class="mb-4">
+                                            <h6 class="mb-1"><span class="mr-2"></span>Aso-ebi  (48)</h6>
+                                        </div>
+                                        <div class="glide__slide">
+                                            <img src="img/products/004.jpeg" alt="Cremeschnitte" class="mb-4">
+                                            <h6 class="mb-1"><span class="mr-2"></span>Aso-ebib (67)</h6>
+                                        </div>
+                                        <div class="glide__slide">
+                                            <img src="img/products/004.jpeg" alt="Cremeschnitte" class="mb-4">
+                                            <h6 class="mb-1"><span class="mr-2"></span>Aso-ebi  (42)</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- main ends -->
+
+    <!-- footer area -->
+    <footer class="page-footer">
+        <div class="footer-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <p class="mb-0 text-muted">Asho. 2022</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer ends -->
+
+    <script src="js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="js/vendor/Chart.bundle.min.js"></script>
+    <script src="js/vendor/chartjs-plugin-datalabels.js"></script>
+    <script src="js/vendor/moment.min.js"></script>
+    <script src="js/vendor/fullcalendar.min.js"></script>
+    <script src="js/vendor/datatables.min.js"></script>
+    <script src="js/vendor/perfect-scrollbar.min.js"></script>
+    <script src="js/vendor/progressbar.min.js"></script>
+    <script src="js/vendor/jquery.barrating.min.js"></script>
+    <script src="js/vendor/select2.full.js"></script>
+    <script src="js/vendor/nouislider.min.js"></script>
+    <script src="js/vendor/bootstrap-datepicker.js"></script>
+    <script src="js/vendor/Sortable.js"></script>
+    <script src="js/vendor/mousetrap.min.js"></script>
+    <script src="js/vendor/glide.min.js"></script>
+    <script src="js/dore.script.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
